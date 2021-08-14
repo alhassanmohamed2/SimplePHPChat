@@ -20,7 +20,8 @@
             <label for="exampleFormControlTextarea1">Enter Message</label>
             <textarea class="form-control msg" id="exampleFormControlTextarea1" rows="3" name="msg" required></textarea>
         </div>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary send">Send</button>
+        <button type="button" class="btn btn-primary del">Delete Chat</button>
     </form>
 </body>
 <script>
@@ -28,7 +29,7 @@
         chat();
     }, 1000);
 
-    $(document).on('click', '.btn-primary', function() {
+    $(document).on('click', '.send', function() {
         var chat_message = $.trim($('.msg').val());
         $.ajax({
             url: "send.php",
@@ -36,6 +37,19 @@
             data: {
                 msg: chat_message
             },
+            success: function(data) {
+                chat()
+            }
+        })
+
+    });
+
+    
+    $(document).on('click', '.del', function() {
+        $.ajax({
+            url: "delete_chat.php",
+            method: "POST",
+            data: {},
             success: function(data) {
                 chat()
             }

@@ -42,9 +42,9 @@ class DataQuery extends Database
         $this->Errors();
     }
 
-    function delete($database, $table, $id)
+    function delete($database, $table)
     {
-        $query =  "DELETE FROM $database.$table WHERE id=$id";
+        $query =  "DELETE FROM $database.$table";
         mysqli_query($this->connection, $query);
         $this->Errors();
     }
