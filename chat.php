@@ -1,6 +1,6 @@
 <?php 
 include 'database/datasys.php';
-$get_msg = new DataQuery();
+$get_msg = new DataQuery(/*Host, username, password*/);
  $msg_array = $get_msg->select('test','chat','msg');
 
  for ($i = 0; $i < count($msg_array); $i++) {

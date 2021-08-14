@@ -1,6 +1,6 @@
 <?php 
 include 'database/datasys.php';
-$insert_msg = new DataQuery();
+$insert_msg = new DataQuery(/*Host, username, password*/);
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
