@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container chat">
+    <div class="container chat"  style="border:1px solid black; border-radius:10px;margin:50px;padding:20px;">
 
     </div>
     <form method="POST" style="margin:50px;">
