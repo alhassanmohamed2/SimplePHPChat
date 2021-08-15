@@ -12,8 +12,10 @@ class Database
       $this->user = $user;
       $this->password = $password;
       $this->connection = mysqli_connect($this->host, $this->user, $this->password);
+      mysqli_set_charset($this->connection , 'utf8mb4' );
     } else {
       $this->connection = mysqli_connect($this->host, $this->user, $this->password);
+      mysqli_set_charset($this->connection , 'utf8mb4' );
     }
 
     if (mysqli_connect_errno()) {

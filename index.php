@@ -39,6 +39,7 @@
             },
             success: function(data) {
                 chat()
+                $('.msg').val('')
             }
         })
 
