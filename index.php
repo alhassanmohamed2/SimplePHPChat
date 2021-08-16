@@ -24,57 +24,5 @@
         <button type="button" class="btn btn-primary del">Delete Chat</button>
     </form>
 </body>
-<<<<<<< HEAD
-=======
-<script>
-    setInterval(function() {
-        chat();
-    }, 1000);
-
-    $(document).on('click', '.send', function() {
-        var chat_message = $.trim($('.msg').val());
-        $.ajax({
-            url: "send.php",
-            method: "POST",
-            data: {
-                msg: chat_message
-            },
-            success: function(data) {
-                chat()
-                $('.msg').val('')
-            }
-        })
-
-    });
-
-    
-    $(document).on('click', '.del', function() {
-        $.ajax({
-            url: "delete_chat.php",
-            method: "POST",
-            data: {},
-            success: function(data) {
-                chat()
-            }
-        })
-
-    });
-
-    function chat() {
-        $.ajax({
-            url: "chat.php",
-            method: "",
-            data: {},
-            success: function(data) {
-                $('.chat').html(data);
-            }
-        })
-    }
-
-    if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href);
-    }
-</script>
->>>>>>> 6acf93a5de6d1d7e67a342a7015fb2b01d3ba765
 
 </html>
